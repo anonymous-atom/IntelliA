@@ -124,9 +124,9 @@ class ChatMultiObjClassifier(nn.Module):
         self.heads = nn.ModuleList([
             TransformerResidualHead(
                 in_dim=2880,
-                num_chunks=16,     # tune 8/16/32
-                d_model=512,       # tune 128/256/384
-                num_layers=4,      # 1-4
+                num_chunks=16,
+                d_model=512,
+                num_layers=4,
                 nhead=8,
                 dim_feedforward=1024,
                 dropout=0.15,
