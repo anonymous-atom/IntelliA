@@ -15,9 +15,9 @@
 
 # replace these information with your own
 
-PROJECT_DIR=/anvil/projects/x-nairr250100
+PROJECT_DIR=/<>/projects/
 verl_workdir=$PROJECT_DIR/verl
-RAY_DATA_HOME=/anvil/projects/x-nairr250100
+RAY_DATA_HOME=/<>/projects/
 apptainer_image_path=$PROJECT_DIR/verl_rl.sif
 train_files=${RAY_DATA_HOME}/data/rl_train.parquet
 val_files=${RAY_DATA_HOME}/data/rl_train.parquet
@@ -84,8 +84,8 @@ NGPUS="${SLURM_GPUS_PER_NODE:-${SLURM_GPUS_ON_NODE:-8}}"
 
 project_name='DAPO-QReward'
 exp_name='DAPO-Qwen2.5-7B'
-MODEL_PATH=/anvil/projects/x-nairr250100/hf_cache/Qwen/Qwen2.5-7B-Instruct-1M
-CKPTS_DIR=/anvil/projects/x-nairr250100/ckpts/${project_name}/${exp_name}
+MODEL_PATH=/<>/projects/x-nairr250100/hf_cache/Qwen/Qwen2.5-7B-Instruct-1M
+CKPTS_DIR=/<>/projects/x-nairr250100/ckpts/${project_name}/${exp_name}
 
 adv_estimator=grpo
 use_kl_in_reward=False
