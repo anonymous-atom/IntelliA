@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=verl-ray-on-slurm
-#SBATCH --nodes=2
+#SBATCH --nodes=3
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=200G
-#SBATCH --partition=ai
-#SBATCH --time=01:00:00
-#SBATCH --account=nairr250100-ai
+#SBATCH --mem=<>
+#SBATCH --partition=<>
+#SBATCH --time=
+#SBATCH --account=<>
 #SBATCH --gpus-per-node=4
 #SBATCH --cpus-per-task=64
 #SBATCH --output=slurm-%j.out
