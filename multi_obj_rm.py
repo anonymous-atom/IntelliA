@@ -120,39 +120,6 @@ class TransformerResidualHead(nn.Module):
 class ChatMultiObjClassifier(nn.Module):
     def __init__(self, num_classes_per_head=[2, 2, 2]):
         super().__init__()
-
-        # # Load the pretrained transformer
-        # self.base_model = AutoModelForCausalLM.from_pretrained(base_model_name,
-        #                                                        attn_implementation="sdpa",
-        #                                                        quantization_config=quantization_config,
-        #                                                       )
-        # if True and hasattr(self.base_model, "gradient_checkpointing_enable"):
-        #     self.base_model.gradient_checkpointing_enable()
-        #     self.base_model.config.use_cache = False  # Must be disabled for checkpointing
-        #     print("Gradient Checkpointing Enabled")
-            
-
-        # self.hidden_size = self.base_model.config.hidden_size
-        # print(self.hidden_size)
-
-        # for param in self.base_model.parameters():
-        #     param.requires_grad = False
-
-        # One classification head per objective
-        # self.heads = nn.ModuleList([
-        #     nn.Linear(2880, num_cls).to(torch.bfloat16) for num_cls in num_classes_per_head
-        # ])
-        
-        # hidden_dim = 1440
-        # self.heads = nn.ModuleList([
-        #     nn.Sequential(
-        #         nn.Linear(2880, hidden_dim),
-        #         nn.ReLU(),
-        #         nn.Dropout(0.1),
-        #         nn.Linear(hidden_dim, num_cls)
-        #     ).to(torch.bfloat16)
-        #     for num_cls in num_classes_per_head
-        # ])
         
         self.heads = nn.ModuleList([
             TransformerResidualHead(
