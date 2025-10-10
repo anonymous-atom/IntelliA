@@ -3,15 +3,7 @@ from torch.utils.data import Dataset
 from datasets import Dataset as HFDataset
 import os
 
-system_instruction= """You help review whether the the following reviewer's question regarding the paper attached. Here are three axis of quality,
-                    low_effort\n,
-                    which measures question is not easily answerable with a quick look across the paper. false if the question is easily answerable with a quick look across the paper, true otherwise\n,
-                    evidence\n,
-                    true if question is supported by concrete reasoning and evidence from the paper (such as figures, equations, sections, claims), false otherwise\n,
-                    factual (groundness) \n,
-                    which measures whether is grounded on the paper and not just made up from abstract or collection of keywords into a sentence. true if the question is grounded on the paper, false otherwise\n,
-                    Just output above three in a json format with the following keys: low_effort, evidence, factual.,
-                    Output format: {'low_effort': '<boolean>', 'evidence': '<boolean>', 'factual': '<boolean>'}"""
+system_instruction= "" REDACTED """
 
 class MultiObjRMDataset(Dataset):
     def __init__(self, tokenizer=None, arrow_dir=None, max_length=20000, split='train',
