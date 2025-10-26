@@ -84,8 +84,8 @@ NGPUS="${SLURM_GPUS_PER_NODE:-${SLURM_GPUS_ON_NODE:-8}}"
 
 project_name='DAPO-QReward'
 exp_name='DAPO-Qwen2.5-7B'
-MODEL_PATH=/<>/projects/x-nairr250100/hf_cache/Qwen/Qwen2.5-7B-Instruct-1M
-CKPTS_DIR=/<>/projects/x-nairr250100/ckpts/${project_name}/${exp_name}
+MODEL_PATH=/<>/projects/<>/hf_cache/Qwen/Qwen2.5-7B-Instruct-1M
+CKPTS_DIR=/<>/projects/<>/ckpts/${project_name}/${exp_name}
 
 adv_estimator=grpo
 use_kl_in_reward=False
